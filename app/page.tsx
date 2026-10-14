@@ -3,6 +3,7 @@ import {useEffect,useState} from 'react';
 import {ArrowUpRight,ArrowRight,ArrowDown,Menu,X,MapPin,Check,ChevronLeft,ChevronRight,Compass} from 'lucide-react';
 import Reveal from '../components/Reveal';
 import MotionDirector from '../components/MotionDirector';
+import AdventureFinder from '../components/AdventureFinder';
 
 const stories=[
 {number:'01',type:'EAT / DRINK',title:'Make a night of it.',line:'Restaurants & bars',image:'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1100&q=85'},
@@ -36,13 +37,14 @@ export default function Home(){
  </div>
  <div className="lp-hero-foot"><div className="lp-hero-location"><MapPin size={15}/> GOLD COAST · QUEENSLAND</div><div className="lp-hero-controls"><button aria-label="Previous feature" onClick={()=>setSlide((slide+2)%3)}><ChevronLeft size={19}/></button><span>0{slide+1} <b>/ 03</b></span><button aria-label="Next feature" onClick={()=>setSlide((slide+1)%3)}><ChevronRight size={19}/></button></div></div>
  </section>
- <section className="lp-strip" aria-label="LocalPass benefits"><div className="lp-strip-track">{Array.from({length:4},(_,i)=><span key={i}>THE COAST IS CALLING <b>✳</b> GOOD PLACES. BETTER PRICES. <b>✳</b> MAKE MORE MEMORIES <b>✳</b> </span>)}</div></section>
+ <section className="lp-strip" aria-label="LocalPass benefits"><div className="lp-strip-track">{Array.from({length:4},(_,i)=><span key={i}>YOUR NEXT ADVENTURE AWAITS <b>✳</b> GO OUT. HAVE FUN. <b>✳</b> MAKE MORE MEMORIES <b>✳</b> </span>)}</div></section>
  <section className="lp-intro lp-container"><Reveal><span className="lp-section-no">01 / A BETTER WAY TO GO OUT</span><div className="lp-intro-grid"><h2>YOUR CITY.<br/><span>MORE REASONS</span><br/>TO LOVE IT.</h2><div className="lp-intro-side"><span className="lp-star">✳</span><p>Good food. Great experiences. Unexpected favourites. We’re making it easier to get out, try more and keep more in your pocket.</p><a href="#passes" className="lp-underlink">MEET YOUR NEW PASS <ArrowUpRight size={20}/></a></div></div></Reveal></section>
  <section id="discover" className="lp-discover lp-container">
  <Reveal><div className="lp-heading-row"><div><span className="lp-section-no">02 / NEVER A BORING DAY</span><h2>LESS SCROLLING.<br/><span>MORE LIVING.</span></h2></div><p>Whatever you’re into, there's always something good around the corner.</p></div></Reveal>
  <div className="lp-story-grid">{stories.map((s,i)=><Reveal key={s.number}><article className="lp-story"><div className="lp-story-photo" style={{backgroundImage:'url('+s.image+')'}}/><div className="lp-story-overlay"/><div className="lp-story-top"><span>{s.number} — {s.type}</span><span className="lp-story-arrow"><ArrowUpRight size={22}/></span></div><div className="lp-story-bottom"><small>{s.line}</small><h3>{s.title}</h3></div></article></Reveal>)}</div>
  <p className="lp-legal">Photography illustrates intended categories. These are not live offers or affiliated merchants.</p>
  </section>
+ <AdventureFinder/>
  <section className="lp-statement"><div className="lp-container"><Reveal><span className="lp-section-no bright">THE ENTIRE POINT</span><div className="lp-statement-row"><h2>A LITTLE PASS.<br/><i>A LOT MORE LIFE.</i></h2><div className="lp-ring"><span>LOCALS<br/>PASS</span><ArrowUpRight size={43}/></div></div><p>From a spontaneous dinner to a whole new adventure. We believe your best days shouldn't come with a ridiculous price tag.</p></Reveal></div></section>
  <section id="how" className="lp-how lp-container"><Reveal><span className="lp-section-no">03 / MADE TO BE EASY</span><div className="lp-heading-row"><h2>THREE STEPS.<br/><span>THAT'S IT.</span></h2><p>No cutting coupons. No chasing promo codes. Just discover the good stuff and enjoy it.</p></div></Reveal><div className="lp-how-grid">{[
  ['01','CHOOSE YOUR PASS','Visiting for seven days or calling the Coast home? Pick the one that fits your life.'],
