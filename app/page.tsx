@@ -2,6 +2,7 @@
 import {useEffect,useState} from 'react';
 import {ArrowUpRight,ArrowRight,ArrowDown,Menu,X,MapPin,Check,ChevronLeft,ChevronRight,Compass} from 'lucide-react';
 import Reveal from '../components/Reveal';
+import MotionDirector from '../components/MotionDirector';
 
 const stories=[
 {number:'01',type:'EAT / DRINK',title:'Make a night of it.',line:'Restaurants & bars',image:'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1100&q=85'},
@@ -18,7 +19,7 @@ export default function Home(){
  {top:'SAY YES TO',bottom:'MORE DAYS OUT.',small:'THE GOOD STUFF IS CLOSER THAN YOU THINK.',photo:'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=2200&q=90'},
  {top:'THE BEST DAYS',bottom:'AREN’T PLANNED.',small:'DISCOVER SOMETHING NEW.',photo:'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=90'}
  ];
- return <main className="lp">
+ return <main className="lp"><MotionDirector/>
  <header className={scrolled?'lp-nav scrolled':'lp-nav'}>
  <a className="lp-logo" href="#top" aria-label="LocalPass home">locals<span>pass</span><i>●</i></a>
  <nav className={menu?'lp-links active':'lp-links'} aria-label="Main navigation">
